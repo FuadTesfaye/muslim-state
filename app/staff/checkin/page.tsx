@@ -79,7 +79,7 @@ function StaffCheckinContent() {
           <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold mt-1">
             Staff Arrival Gate Terminal
           </h1>
-          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-3xl" style={{ color: 'var(--mute)' }}>
             Instantaneous barcode & digital lanyard verification terminal equipped with
             synthesizer dual audio chimes and real-time gate velocity telemetry.
           </p>

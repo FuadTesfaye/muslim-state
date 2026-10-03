@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
 :root {
   --bg: #EEF1F5;
   --card: #FFFFFF;
@@ -14,6 +16,20 @@
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+}
+
+:root[data-theme="light"] {
+  --bg: #EEF1F5;
+  --card: #FFFFFF;
+  --ink: #0F1A2E;
+  --mute: #556078;
+  --line: #D5DBE5;
+  --blue: #1D4E89;
+  --on: #FFFFFF;
+  --ochre: #9A6A1C;
+  --soft: #E1E8F2;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,10 +43,12 @@
     --on: #07101F;
     --ochre: #D9A94F;
     --soft: #18253F;
+    color-scheme: dark;
   }
 }
 
-:root[data-theme="dark"] {
+:root[data-theme="dark"],
+.dark {
   --bg: #0B1220;
   --card: #121C30;
   --ink: #E7ECF5;
@@ -40,6 +58,7 @@
   --on: #07101F;
   --ochre: #D9A94F;
   --soft: #18253F;
+  color-scheme: dark;
 }
 
 html {

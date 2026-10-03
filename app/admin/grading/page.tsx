@@ -66,7 +66,7 @@ export default function AdminGradingPage() {
           <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold mt-1">
             Hybrid 100-Point Rubric Grading Portal
           </h1>
-          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-3xl" style={{ color: 'var(--mute)' }}>
             Official judicial evaluation interface for Quran acoustic recitations,
             articulation inspections, scholarly essays, and contestant appeal rebuttals.
           </p>

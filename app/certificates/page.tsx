@@ -34,7 +34,7 @@ export default function CertificatesPage() {
     <>
       <div className="mb-6 sm:mb-8">
         <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold">{t('certificates')}</h1>
-        <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
+        <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-3xl" style={{ color: 'var(--mute)' }}>
           Public cryptographic verification portal for accredited parchment diplomas,
           tournament honors, and Sanad credentials.
         </p>
@@ -78,7 +78,7 @@ export default function CertificatesPage() {
       {/* Parchment Diploma Visualizer */}
       {activeCert && (
         <div
-          className="card p-4 sm:p-8 md:p-12 border-2 sm:border-4 rounded-2xl relative shadow-xl overflow-hidden max-w-4xl mx-auto"
+          className="card p-4 sm:p-8 md:p-12 border-2 sm:border-4 rounded-2xl relative shadow-xl overflow-hidden max-w-5xl mx-auto"
           style={{
             background: 'var(--card)',
             borderColor: 'var(--ochre)'

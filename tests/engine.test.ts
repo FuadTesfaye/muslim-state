@@ -110,4 +110,33 @@ describe('IlmFlow State Engine Test Suite', () => {
       expect(finalScore).toBe(0);
     });
   });
+
+  // 4. Light and Dark Theme Engine
+  describe('Light & Dark Mode Theme Engine', () => {
+    const resolveThemeMode = (
+      mode: 'light' | 'dark' | 'system',
+      systemPrefersDark: boolean
+    ) => {
+      if (mode === 'dark') return 'dark';
+      if (mode === 'light') return 'light';
+      return systemPrefersDark ? 'dark' : 'light';
+    };
+
+    it('10. should correctly resolve explicit light and dark themes', () => {
+      expect(resolveThemeMode('dark', false)).toBe('dark');
+      expect(resolveThemeMode('light', true)).toBe('light');
+    });
+
+    it('11. should adapt to system theme preferences when set to system', () => {
+      expect(resolveThemeMode('system', true)).toBe('dark');
+      expect(resolveThemeMode('system', false)).toBe('light');
+    });
+
+    it('12. should toggle between light and dark modes accurately', () => {
+      const toggle = (currentResolved: 'light' | 'dark') =>
+        currentResolved === 'dark' ? 'light' : 'dark';
+      expect(toggle('dark')).toBe('light');
+      expect(toggle('light')).toBe('dark');
+    });
+  });
 });

@@ -136,7 +136,7 @@ export default function TestPage() {
   // 1. Initial Start Screen
   if (!isStarted) {
     return (
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="mb-6">
           <span className="disp text-xs uppercase font-bold tracking-widest" style={{ color: 'var(--ochre)' }}>
             Proctored Testing Engine
@@ -193,7 +193,7 @@ export default function TestPage() {
   // 2. Exam Results Screen
   if (isSubmitted && result) {
     return (
-      <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8 animate-in fade-in duration-200">
+      <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-in fade-in duration-200">
         <div className="card p-5 sm:p-8 text-center" style={{ background: 'var(--card)' }}>
           <span
             className="disp text-xs uppercase font-bold tracking-widest px-3 py-1 rounded-full"

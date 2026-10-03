@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
+import { useTheme } from '@/lib/ThemeContext';
 import { Language } from '@/lib/data';
 
 const NAV_ITEMS = [
@@ -27,6 +28,7 @@ const LANG_OPTIONS: [Language, string][] = [
 export function Header() {
   const pathname = usePathname();
   const { lang, setLang, t } = useLanguage();
+  const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [prevPathname, setPrevPathname] = useState(pathname);
 
@@ -57,7 +59,7 @@ export function Header() {
         paddingTop: 'env(safe-area-inset-top, 0px)'
       }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-5 h-14 flex items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-3">
         {/* Brand */}
         <Link
           href="/"
@@ -68,8 +70,22 @@ export function Header() {
           <span className="truncate">IlmFlow State</span>
         </Link>
 
-        {/* Right side controls: Language Switcher + Mobile Menu Button */}
+        {/* Right side controls: Theme Toggle + Language Switcher + Mobile Menu Button */}
         <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Quick Theme Toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="chip text-[11px] sm:text-xs px-2.5 py-1 flex items-center gap-1.5 cursor-pointer transition-colors"
+            title={`Current theme: ${theme} (${resolvedTheme}). Click to switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode.`}
+            aria-label={`Switch theme, current is ${resolvedTheme}`}
+          >
+            <span>{resolvedTheme === 'dark' ? '☀️' : '🌙'}</span>
+            <span className="hidden sm:inline font-semibold">
+              {resolvedTheme === 'dark' ? 'Light' : 'Dark'}
+            </span>
+          </button>
+
           <div
             className="flex items-center gap-1"
             role="group"
@@ -110,7 +126,7 @@ export function Header() {
       {/* Horizontal Nav for Tablet & Desktop, plus Touch-Scroll on Mobile */}
       <nav
         id="nav"
-        className="max-w-6xl mx-auto px-4 sm:px-5 flex gap-4 sm:gap-6 overflow-x-auto noscroll py-1 border-t md:border-t-0"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-4 sm:gap-6 overflow-x-auto noscroll py-1 border-t md:border-t-0"
         style={{ borderColor: 'var(--line)' }}
         aria-label="Main"
       >
@@ -185,6 +201,23 @@ export function Header() {
                   </Link>
                 );
               })}
+            </div>
+
+            {/* Mobile Drawer Theme Selector */}
+            <div className="pt-3 border-t mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2" style={{ borderColor: 'var(--line)' }}>
+              <span className="text-xs font-semibold" style={{ color: 'var(--mute)' }}>APPEARANCE THEME</span>
+              <div className="flex items-center gap-1.5">
+                {(['light', 'dark', 'system'] as const).map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => setTheme(mode)}
+                    className="chip text-[11px] py-1 px-2.5 capitalize flex-1 sm:flex-initial text-center"
+                    aria-pressed={theme === mode}
+                  >
+                    {mode === 'light' ? '☀️ Light' : mode === 'dark' ? '🌙 Dark' : '💻 System'}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>

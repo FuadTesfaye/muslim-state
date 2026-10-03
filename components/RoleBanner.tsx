@@ -17,7 +17,7 @@ export function RoleBanner() {
         borderColor: 'var(--line)'
       }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
         {/* Left: Active Persona Display */}
         <div className="flex items-center gap-2 min-w-0">
           <span

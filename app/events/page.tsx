@@ -91,7 +91,7 @@ export default function EventsPage() {
       <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold">{t('events')}</h1>
-          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-3xl" style={{ color: 'var(--mute)' }}>
             Experience multi-day international Islamic summits, academic keynote assemblies, and
             session agendas with real-time pass enrollment.
           </p>
@@ -132,13 +132,13 @@ export default function EventsPage() {
           </span>
         </div>
 
-        <h2 className="disp text-2xl sm:text-3xl md:text-4xl font-bold max-w-3xl leading-snug">
+        <h2 className="disp text-2xl sm:text-3xl md:text-4xl font-bold max-w-4xl leading-snug">
           {selectedEvent.title}
         </h2>
         <p className="disp text-base sm:text-lg mt-1" lang="ar" dir="rtl" style={{ color: 'var(--ochre)' }}>
           {selectedEvent.titleAr}
         </p>
-        <p className="mt-3 sm:mt-4 max-w-2xl leading-relaxed text-xs sm:text-sm md:text-base" style={{ color: 'var(--mute)' }}>
+        <p className="mt-3 sm:mt-4 max-w-3xl leading-relaxed text-xs sm:text-sm md:text-base" style={{ color: 'var(--mute)' }}>
           {selectedEvent.description}
         </p>
 

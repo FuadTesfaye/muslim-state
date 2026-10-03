@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="border-t" style={{ borderColor: 'var(--line)' }}>
       <div
-        className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-7 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-7 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left"
         style={{ color: 'var(--mute)' }}
       >
         <span className="disp text-base sm:text-lg" lang="ar" dir="rtl">

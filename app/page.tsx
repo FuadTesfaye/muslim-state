@@ -27,10 +27,10 @@ export default function HomePage() {
         >
           منظومة إدارة المؤتمرات والمسابقات الإسلامية العالمية 🌙
         </p>
-        <h1 className="disp text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] max-w-3xl">
+        <h1 className="disp text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] max-w-4xl">
           {t('h')}
         </h1>
-        <p className="mt-4 sm:mt-5 max-w-2xl text-base sm:text-lg leading-relaxed" style={{ color: 'var(--mute)' }}>
+        <p className="mt-4 sm:mt-5 max-w-3xl text-base sm:text-lg leading-relaxed" style={{ color: 'var(--mute)' }}>
           {t('s')}
         </p>
 
@@ -238,7 +238,7 @@ export default function HomePage() {
         className="mt-10 sm:mt-14 card p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
         style={{ background: 'var(--soft)' }}
       >
-        <div className="max-w-xl">
+        <div className="max-w-2xl">
           <span className="disp text-xs uppercase font-bold tracking-widest" style={{ color: 'var(--ochre)' }}>
             Cryptographic Verification Portal
           </span>

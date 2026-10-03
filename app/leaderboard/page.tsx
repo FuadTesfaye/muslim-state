@@ -98,7 +98,7 @@ export default function LeaderboardPage() {
       <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold">{t('leaderboard')}</h1>
-          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-3xl" style={{ color: 'var(--mute)' }}>
             Official global tournament standings, verified scores, and tie-breaking honor badges
             certified by the Secretariat Board.
           </p>
