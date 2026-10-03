@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sheikh Yusuf Karimi | Lessons, fatwas, talks and books</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--bg:#EEF1F5;--card:#FFFFFF;--ink:#0F1A2E;--mute:#556078;--line:#D5DBE5;--blue:#1D4E89;--on:#FFFFFF;--ochre:#9A6A1C;--soft:#E1E8F2;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--card:#121C30;--ink:#E7ECF5;--mute:#98A5BD;--line:#223250;--blue:#6FA3E0;--on:#07101F;--ochre:#D9A94F;--soft:#18253F}}
+:root[data-theme="dark"]{--bg:#0B1220;--card:#121C30;--ink:#E7ECF5;--mute:#98A5BD;--line:#223250;--blue:#6FA3E0;--on:#07101F;--ochre:#D9A94F;--soft:#18253F}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 110px)}
+body{background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk','Noto Sans Ethiopic',system-ui,sans-serif;line-height:1.6}
+.disp{font-family:'Amiri','Noto Sans Ethiopic',Georgia,serif}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.btn{background:var(--blue);color:var(--on);border-radius:8px;padding:.6rem 1.1rem;font-weight:600;font-size:.92rem;display:inline-flex;align-items:center;gap:.5rem}
+.btn:hover{filter:brightness(1.12)}
+.btn2{border:1px solid var(--line);border-radius:8px;padding:.5rem .95rem;font-size:.9rem;font-weight:500;display:inline-flex;align-items:center;gap:.4rem}
+.btn2:hover{background:var(--soft)}
+.chip{padding:.35rem .85rem;border-radius:8px;font-size:.88rem;font-weight:500;color:var(--mute);border:1px solid var(--line);white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tiles{position:relative;overflow:hidden}
+.tiles::before{content:"";position:absolute;inset:0;opacity:.2;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' fill='none' stroke='%238FB3D9' stroke-width='1.2'%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate(45 28 28)'/%3E%3Ccircle cx='28' cy='28' r='6'/%3E%3C/svg%3E")}
+.tiles>*{position:relative}
+.navlink{padding:.35rem .1rem;font-weight:500;font-size:.95rem;color:var(--mute);border-bottom:2px solid transparent;white-space:nowrap}
+.navlink[aria-current="page"]{color:var(--ink);border-color:var(--ochre)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+details>summary{list-style:none;cursor:pointer}details>summary::-webkit-details-marker{display:none}
+details[open] .chev{transform:rotate(180deg)}.chev{transition:transform .2s}
+.noscroll{scrollbar-width:none}.noscroll::-webkit-scrollbar{display:none}
+[dir=rtl] .flip{transform:scaleX(-1)}
+@media (prefers-reduced-motion:reduce){.chev{transition:none}}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-30 border-b" style="background:var(--card);border-color:var(--line);padding-top:env(safe-area-inset-top,0px)">
+  <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between gap-4">
+    <a href="#/" class="disp text-xl font-bold" id="brand">Yusuf Karimi</a>
+    <div class="flex items-center gap-1" role="group" aria-label="Language" id="langs"></div>
+  </div>
+  <nav id="nav" class="max-w-6xl mx-auto px-5 flex gap-6 overflow-x-auto noscroll" aria-label="Main"></nav>
+</header>
+<main id="app" class="max-w-6xl mx-auto px-5 py-10 min-h-[70vh]"></main>
+<footer class="border-t" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-5 py-7 text-sm flex flex-wrap justify-between gap-3" style="color:var(--mute)">
+    <span class="disp text-lg" lang="ar" dir="rtl">وما توفيقي إلا بالله</span>
+    <span id="foot">Sample content. Replace names, links and media with your own.</span>
+  </div>
+</footer>
+
+<script>
+const L={
+en:{home:'Home',about:'About',lessons:'Lessons',videos:'Videos',audio:'Audio',fatwas:'Fatwas',books:'Books',contact:'Contact',
+ h:'Knowledge from the sources, taught with clarity.',s:'Weekly lessons, fatwas, khutbahs and books by Sheikh Yusuf Karimi in one searchable library.',
+ ls:'Weekly series, in order',vs:'Khutbahs, talks and question nights',as:'Recordings to listen to on the road',fs:'Answers to listeners with the evidence given',bs:'Free to read and download',cs:'Invitations, questions and media requests',
+ search:'Search',all:'All',latest:'Latest',more:'See all',watch:'Watch',listen:'Listen',open:'Open series',dl:'Download PDF',ask:'Ask a question',none:'Nothing matches. Try another word or choose All.',dir:'ltr',
+ ab:'Biography and teachers',ij:'Ijazat and certificates',recent:'Recent fatwas'},
+ar:{home:'الرئيسية',about:'نبذة',lessons:'الدروس',videos:'المرئيات',audio:'الصوتيات',fatwas:'الفتاوى',books:'الكتب',contact:'تواصل',
+ h:'علمٌ من مصادره، يُقدَّم بوضوح.',s:'دروس أسبوعية وفتاوى وخطب وكتب لفضيلة الشيخ يوسف كريمي في مكتبة واحدة قابلة للبحث.',
+ ls:'سلاسل أسبوعية مرتبة',vs:'خطب ومحاضرات وليالي أسئلة',as:'تسجيلات للاستماع أثناء السفر',fs:'أجوبة للسائلين مع الدليل',bs:'للقراءة والتحميل مجانًا',cs:'دعوات وأسئلة وطلبات إعلامية',
+ search:'بحث',all:'الكل',latest:'الأحدث',more:'عرض الكل',watch:'شاهد',listen:'استمع',open:'افتح السلسلة',dl:'تحميل PDF',ask:'اسأل سؤالًا',none:'لا نتائج. جرّب كلمة أخرى أو اختر الكل.',dir:'rtl',
+ ab:'السيرة والشيوخ',ij:'الإجازات والشهادات',recent:'أحدث الفتاوى'},
+am:{home:'መነሻ',about:'ስለ ሼኽ',lessons:'ትምህርቶች',videos:'ቪዲዮ',audio:'ድምጽ',fatwas:'ፈትዋዎች',books:'መጻሕፍት',contact:'ያግኙን',
+ h:'ከምንጮቹ የተወሰደ ዕውቀት፣ በግልጽነት የተላለፈ።',s:'የሼኽ ዩሱፍ ከሪሚ ሳምንታዊ ትምህርቶች፣ ፈትዋዎች፣ ኹጥባዎችና መጻሕፍት በአንድ ቤተ መጻሕፍት።',
+ ls:'ሳምንታዊ ተከታታይ ትምህርቶች',vs:'ኹጥባዎች፣ ንግግሮችና የጥያቄ ምሽቶች',as:'በመንገድ ላይ የሚደመጡ ቅጂዎች',fs:'ለጠያቂዎች ከማስረጃ ጋር የተሰጡ መልሶች',bs:'በነጻ ለማንበብና ለማውረድ',cs:'ግብዣዎች፣ ጥያቄዎችና የሚዲያ ጥያቄዎች',
+ search:'ፈልግ',all:'ሁሉም',latest:'የቅርብ ጊዜ',more:'ሁሉንም እይ',watch:'ተመልከት',listen:'አድምጥ',open:'ተከታታዩን ክፈት',dl:'PDF አውርድ',ask:'ጥያቄ ላክ',none:'ምንም አልተገኘም። ሌላ ቃል ይሞክሩ።',dir:'ltr',
+ ab:'የህይወት ታሪክና መምህራን',ij:'ኢጃዛዎችና ሰርተፊኬቶች',recent:'የቅርብ ፈትዋዎች'}};
+const PAGES=['home','about','lessons','videos','audio','fatwas','books','contact'];
+const D={
+lessons:[['Sharh of Riyad as-Salihin','48 lessons, every Thursday','Updated this week'],['Usul al-Fiqh for beginners','20 lessons','2 months ago'],['The Prophet\'s life, from Makkah to Madinah','34 lessons','4 months ago'],['Fiqh of worship, the book of prayer','26 lessons','6 months ago']],
+videos:[['Friday khutbah: Guarding the tongue','24 min','Friday'],['Question night on prayer','1 hr 12 min','2 months ago'],['Khutbah: Kindness to parents','21 min','3 months ago'],['Lecture: Why we fast','48 min','5 months ago'],['Khutbah: Honesty in trade','19 min','6 months ago'],['Lecture: The Quran as a guide','57 min','8 months ago']],
+audio:[['Fiqh of fasting before Ramadan','41 min','3 weeks ago'],['Seerah part 7: The Hijrah','55 min','3 months ago'],['Reminder: Patience in hardship','17 min','4 months ago'],['Tafsir of Surat al-Kahf','1 hr 4 min','5 months ago'],['Reminder: Du\'a and certainty','14 min','7 months ago']]};
+const F=[['Prayer','Can I combine prayers while travelling for work?','Combining Dhuhr with Asr, and Maghrib with Isha, is permitted for the traveller. This answer explains the distance, the conditions, and what to do when the journey repeats every week, with the evidence.'],
+['Zakat','Is it permissible to pay zakat in instalments?','Zakat is due when a year has passed over the nisab. Paying early or in parts is allowed if the full amount reaches those who deserve it. The answer lists the cases.'],
+['Dealings','Is working in a bank with interest allowed?','It depends on the role. Work that directly records or administers riba is not allowed. The answer separates the cases and advises how to leave such work step by step.'],
+['Fasting','How do I make up missed fasts from past years?','Make up each day as soon as you can. If you delayed without an excuse until the next Ramadan, repentance is required. The answer covers fidyah for the elderly and the sick.'],
+['Family','What are the rights of a wife during a long absence?','Both spouses hold rights over each other. This answer covers financial support, communication and the limits of time apart, with the relevant texts.'],
+['Prayer','How should I pray when I cannot stand?','The prayer is performed sitting, and then lying down if needed. The answer explains how to bow, prostrate and signal, and how to pray on a chair.']];
+const B=[['Foundations of Fiqh','A clear introduction to how rulings are derived.','186 pages'],['Forty Hadith on Character','Forty narrations with short commentary for daily life.','124 pages'],['A Guide to the Prayer','Step by step, from wudu to the final salam.','96 pages']];
+const IC={play:'<path d="M8 5v14l11-7z"/>',book:'<path d="M5 3h12a2 2 0 012 2v16H7a2 2 0 01-2-2zm2 14v2h10V5H7z"/>',mic:'<path d="M12 3a4 4 0 00-4 4v5a4 4 0 008 0V7a4 4 0 00-4-4zM5 12a7 7 0 0014 0h-2a5 5 0 01-10 0z"/>',vid:'<path d="M4 6h11a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1zm13 4l4-2v8l-4-2z"/>'};
+const ic=(k,s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${IC[k]}</svg>`;
+let lang='en',fcat='All',fq='';
+const t=k=>L[lang][k];
+const head=(k,sub)=>`<div class="mb-8"><h1 class="disp text-4xl md:text-5xl font-bold">${t(k)}</h1><p class="mt-2 max-w-2xl" style="color:var(--mute)">${t(sub)}</p></div>`;
+const row=(r,type)=>`<li class="card p-4 flex items-center gap-4"><span class="w-11 h-11 rounded-lg grid place-items-center shrink-0" style="background:var(--soft);color:var(--blue)">${ic(type==='audio'?'mic':type==='lessons'?'book':'vid')}</span><div class="min-w-0 flex-1"><p class="font-semibold">${r[0]}</p><p class="text-sm" style="color:var(--mute)">${r[1]}, ${r[2]}</p></div><a href="#/${type}" class="btn2 shrink-0">${t(type==='audio'?'listen':type==='lessons'?'open':'watch')}</a></li>`;
+const vcard=r=>`<a href="#/videos" class="card overflow-hidden block hover:shadow-md"><div class="tiles h-36 grid place-items-center" style="background:var(--blue);color:var(--on)"><span class="w-12 h-12 rounded-full grid place-items-center" style="background:var(--on);color:var(--blue)">${ic('play',20)}</span></div><div class="p-4"><p class="font-semibold">${r[0]}</p><p class="text-sm" style="color:var(--mute)">${r[1]}, ${r[2]}</p></div></a>`;
+const fat=a=>a.map(f=>`<details class="card px-5 py-4"><summary class="flex justify-between gap-4 items-center font-semibold"><span>${f[1]}</span><svg class="chev shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><p class="mt-1 text-sm" style="color:var(--ochre)">${f[0]}</p><p class="mt-2" style="color:var(--mute)">${f[2]}</p></details>`).join('');
+const sec=(k,sub,href,inner)=>`<section class="mt-14"><div class="flex items-end justify-between mb-5"><div><h2 class="disp text-3xl font-bold">${t(k)}</h2><p class="text-sm" style="color:var(--mute)">${t(sub)}</p></div><a href="${href}" class="btn2">${t('more')}</a></div>${inner}</section>`;
+const V={
+home:()=>`<section class="tiles rounded-2xl px-6 py-14 md:px-12 md:py-20" style="background:var(--card);border:1px solid var(--line)"><p class="disp text-3xl mb-3" lang="ar" dir="rtl" style="color:var(--ochre)">الشيخ يوسف كريمي</p><h1 class="disp text-4xl md:text-6xl font-bold leading-[1.1] max-w-3xl">${t('h')}</h1><p class="mt-5 max-w-xl text-lg" style="color:var(--mute)">${t('s')}</p><div class="mt-8 flex flex-wrap gap-3"><a class="btn" href="#/lessons">${t('lessons')}</a><a class="btn2" href="#/fatwas">${t('fatwas')}</a></div></section>
+ ${sec('videos','vs','#/videos','<div class="grid sm:grid-cols-3 gap-4">'+D.videos.slice(0,3).map(vcard).join('')+'</div>')}
+ ${sec('lessons','ls','#/lessons','<ul class="grid gap-3">'+D.lessons.slice(0,3).map(r=>row(r,'lessons')).join('')+'</ul>')}
+ ${sec('fatwas','fs','#/fatwas','<div class="grid gap-3">'+fat(F.slice(0,3))+'</div>')}`,
+lessons:()=>head('lessons','ls')+'<ul class="grid gap-3">'+D.lessons.map(r=>row(r,'lessons')).join('')+'</ul>',
+videos:()=>head('videos','vs')+'<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">'+D.videos.map(vcard).join('')+'</div>',
+audio:()=>head('audio','as')+'<ul class="grid gap-3">'+D.audio.map(r=>row(r,'audio')).join('')+'</ul>',
+fatwas:()=>{const cats=['All',...new Set(F.map(f=>f[0]))];return head('fatwas','fs')+`<input id="fq" type="search" value="${fq}" placeholder="${t('search')}" aria-label="${t('search')}" class="w-full md:w-96 px-4 py-2.5 rounded-lg border text-sm" style="background:var(--card);border-color:var(--line);color:var(--ink)"><div class="mt-4 flex gap-2 overflow-x-auto noscroll pb-1">${cats.map(c=>`<button class="chip" data-c="${c}" aria-pressed="${c===fcat}">${c==='All'?t('all'):c}</button>`).join('')}</div><div id="fl" class="mt-5 grid gap-3 max-w-3xl"></div>`},
+books:()=>head('books','bs')+'<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">'+B.map(b=>`<article class="card p-5 flex flex-col"><div class="tiles h-40 rounded-lg mb-4 grid place-items-center disp text-2xl font-bold text-center px-4" style="background:var(--blue);color:var(--on)">${b[0]}</div><p style="color:var(--mute)">${b[1]}</p><p class="text-sm mt-1" style="color:var(--mute)">${b[2]}</p><a href="#" class="btn2 mt-4 justify-center">${t('dl')}</a></article>`).join('')+'</div>',
+about:()=>head('about','ab')+`<div class="grid md:grid-cols-5 gap-10"><div class="md:col-span-3 grid gap-4" style="color:var(--mute)"><p class="text-lg" style="color:var(--ink)">Sheikh Yusuf studied fiqh, hadith and usul in the traditional circles of scholars before teaching full time.</p><p>He leads the weekly lesson at the Central Masjid, delivers the Friday khutbah, and answers questions sent from across the world. Replace this text with your own biography, your institution and your offices.</p><p>His teaching covers Quran and tajweed, hadith, aqidah, fiqh, usul, tafsir, seerah and Arabic.</p></div>
+ <div class="md:col-span-2"><h2 class="disp text-2xl font-bold mb-4">${t('ij')}</h2><ol class="grid gap-4 border-s-2 ps-5" style="border-color:var(--ochre)"><li><p class="font-semibold">Ijazah in Sahih al-Bukhari</p><p class="text-sm" style="color:var(--mute)">Through his teacher in Madinah, 2008</p></li><li><p class="font-semibold">Master's in Shariah</p><p class="text-sm" style="color:var(--mute)">Fiqh and usul, 2014</p></li><li><p class="font-semibold">Imam and teacher</p><p class="text-sm" style="color:var(--mute)">Central Masjid, since 2010</p></li></ol></div></div>`,
+contact:()=>head('contact','cs')+`<div class="grid md:grid-cols-2 gap-5 max-w-3xl"><div class="card p-6"><p class="text-sm" style="color:var(--mute)">Email</p><a class="font-semibold" href="mailto:ask@example.com">ask@example.com</a><p class="text-sm mt-4" style="color:var(--mute)">Phone</p><a class="font-semibold" href="tel:+251900000000">+251 900 000 000</a></div><div class="card p-6 flex flex-wrap gap-2 content-start">${['YouTube','Telegram','WhatsApp','TikTok','Facebook'].map(x=>`<a href="#" class="btn2">${x}</a>`).join('')}</div></div><a class="btn mt-6" href="mailto:ask@example.com?subject=Question%20for%20the%20Sheikh">${t('ask')}</a>`};
+function fl(){const s=fq.toLowerCase(),r=F.filter(f=>(fcat==='All'||f[0]===fcat)&&(!s||(f[1]+f[2]).toLowerCase().includes(s)));document.getElementById('fl').innerHTML=r.length?fat(r):`<p style="color:var(--mute)">${t('none')}</p>`}
+function render(){
+ let p=(location.hash.replace('#/','')||'home');if(!V[p])p='home';
+ document.documentElement.lang=lang;document.documentElement.dir=t('dir');
+ document.getElementById('nav').innerHTML=PAGES.map(x=>`<a class="navlink" href="#/${x==='home'?'':x}" ${x===p?'aria-current="page"':''}>${t(x)}</a>`).join('');
+ document.getElementById('langs').innerHTML=[['en','EN'],['ar','ع'],['am','አማ']].map(([c,l])=>`<button class="chip" data-l="${c}" aria-pressed="${c===lang}">${l}</button>`).join('');
+ document.getElementById('app').innerHTML=V[p]();
+ if(p==='fatwas'){fl();document.getElementById('fq').oninput=e=>{fq=e.target.value;fl()};document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{fcat=b.dataset.c;render()})}
+ document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{lang=b.dataset.l;render()});
+ window.scrollTo(0,0);
+}
+let last='';window.addEventListener('hashchange',render);render();
+</script>
+</body>
+</html>
