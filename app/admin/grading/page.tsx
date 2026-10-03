@@ -58,15 +58,15 @@ export default function AdminGradingPage() {
 
   return (
     <>
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <Link href="/admin" className="text-xs font-semibold hover:underline" style={{ color: 'var(--ochre)' }}>
             ← Back to Secretariat Backoffice
           </Link>
-          <h1 className="disp text-4xl md:text-5xl font-bold mt-1">
+          <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold mt-1">
             Hybrid 100-Point Rubric Grading Portal
           </h1>
-          <p className="mt-2 max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
             Official judicial evaluation interface for Quran acoustic recitations,
             articulation inspections, scholarly essays, and contestant appeal rebuttals.
           </p>
@@ -84,7 +84,7 @@ export default function AdminGradingPage() {
             <button
               key={sub.id}
               onClick={() => handleSelectSub(sub)}
-              className="chip text-xs py-1"
+              className="chip text-xs py-1 shrink-0"
               aria-pressed={isSelected}
             >
               {sub.participantName} ({sub.type.toUpperCase()}) —{' '}
@@ -128,14 +128,14 @@ export default function AdminGradingPage() {
                     </button>
                   </div>
 
-                  <div className="h-24 p-3 rounded-lg border bg-white dark:bg-slate-900 flex items-end justify-between gap-1 overflow-hidden" style={{ borderColor: 'var(--line)' }}>
+                  <div className="h-24 p-2.5 sm:p-3 rounded-lg border bg-white dark:bg-slate-900 flex items-end justify-between gap-0.5 sm:gap-1 overflow-hidden" style={{ borderColor: 'var(--line)' }}>
                     {[
                       20, 45, 60, 80, 95, 70, 50, 85, 100, 75, 40, 65, 80, 90, 60, 35, 55,
                       80, 95, 75, 45, 60, 85, 90, 70, 40, 65, 85, 95, 60, 45, 70, 85, 100
                     ].map((h, i) => (
                       <div
                         key={i}
-                        className={`w-1.5 rounded-full transition-all duration-200 ${
+                        className={`flex-1 min-w-[2px] max-w-[6px] rounded-full transition-all duration-200 ${
                           isPlayingAudio ? 'animate-pulse' : ''
                         }`}
                         style={{
@@ -177,7 +177,7 @@ export default function AdminGradingPage() {
           </div>
 
           {/* 100-Point Rubric Grading Sliders */}
-          <form onSubmit={handlePublishGrade} className="card p-6 md:p-8 space-y-6">
+          <form onSubmit={handlePublishGrade} className="card p-5 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
             <div className="flex justify-between items-end border-b pb-4" style={{ borderColor: 'var(--line)' }}>
               <div>
                 <span className="disp text-xs uppercase font-bold tracking-widest" style={{ color: 'var(--ochre)' }}>

@@ -14,9 +14,9 @@ export function QRModal({
   if (!ticket) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
       <div
-        className="card max-w-sm w-full p-6 text-center relative shadow-2xl animate-in fade-in zoom-in-95 duration-150"
+        className="card max-w-sm w-full p-5 sm:p-6 text-center relative shadow-2xl animate-in fade-in zoom-in-95 duration-150 max-h-[92vh] overflow-y-auto"
         style={{ background: 'var(--card)' }}
       >
         <button
@@ -50,7 +50,7 @@ export function QRModal({
 
         {/* Live SVG QR Code Graphic */}
         <div
-          className="w-48 h-48 mx-auto p-3 rounded-xl border flex items-center justify-center"
+          className="w-40 h-40 sm:w-48 sm:h-48 mx-auto p-2.5 sm:p-3 rounded-xl border flex items-center justify-center"
           style={{ background: '#FFFFFF', borderColor: 'var(--line)' }}
         >
           <svg
@@ -108,15 +108,15 @@ export function QRModal({
           </span>
         </div>
 
-        <div className="mt-5 flex gap-2">
+        <div className="mt-5 flex flex-col sm:flex-row gap-2">
           <Link
             href={`/staff/checkin?token=${ticket.token}`}
             onClick={onClose}
-            className="btn2 flex-1 justify-center text-xs"
+            className="btn2 flex-1 justify-center text-xs py-2"
           >
             Test at Gate Terminal →
           </Link>
-          <button onClick={onClose} className="btn text-xs justify-center">
+          <button onClick={onClose} className="btn text-xs justify-center py-2 sm:w-20">
             Done
           </button>
         </div>

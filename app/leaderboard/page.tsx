@@ -95,28 +95,28 @@ export default function LeaderboardPage() {
 
   return (
     <>
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h1 className="disp text-4xl md:text-5xl font-bold">{t('leaderboard')}</h1>
-          <p className="mt-2 max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold">{t('leaderboard')}</h1>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
             Official global tournament standings, verified scores, and tie-breaking honor badges
             certified by the Secretariat Board.
           </p>
         </div>
 
-        <Link href="/test" className="btn text-xs">
+        <Link href="/test" className="btn text-xs justify-center py-2 sm:py-2.5">
           Take Exam to Enter Standings →
         </Link>
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="card p-4 mb-6 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex gap-2 overflow-x-auto noscroll">
+      <div className="card p-3 sm:p-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+        <div className="flex gap-1.5 sm:gap-2 overflow-x-auto noscroll pb-1 sm:pb-0">
           {categories.map((c) => (
             <button
               key={c}
               onClick={() => setSelectedCat(c)}
-              className="chip text-xs py-1"
+              className="chip text-[11px] sm:text-xs py-1 whitespace-nowrap shrink-0"
               aria-pressed={selectedCat === c}
             >
               {c}
@@ -137,7 +137,7 @@ export default function LeaderboardPage() {
       {/* Leaderboard Table */}
       <div className="card overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table className="w-full min-w-[580px] text-left text-sm">
             <thead
               className="text-xs uppercase tracking-wider border-b"
               style={{ background: 'var(--soft)', borderColor: 'var(--line)', color: 'var(--mute)' }}

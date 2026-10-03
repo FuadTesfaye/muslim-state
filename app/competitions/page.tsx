@@ -23,27 +23,27 @@ export default function CompetitionsPage() {
 
   return (
     <>
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h1 className="disp text-4xl md:text-5xl font-bold">{t('competitions')}</h1>
-          <p className="mt-2 max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold">{t('competitions')}</h1>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
             Authoritative international Islamic championships, proctored Hadith exams, and
             100-point rubric audio recitation tournaments.
           </p>
         </div>
 
-        <Link href="/competitions/submit" className="btn text-xs">
+        <Link href="/competitions/submit" className="btn text-xs justify-center py-2 sm:py-2.5">
           Submit Audio Recitation / Essay →
         </Link>
       </div>
 
       {/* Category Filter Chips */}
-      <div className="flex gap-2 overflow-x-auto noscroll pb-2 mb-6">
+      <div className="flex gap-1.5 sm:gap-2 overflow-x-auto noscroll pb-2 mb-6">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className="chip text-xs py-1.5"
+            className="chip text-[11px] sm:text-xs py-1 sm:py-1.5 whitespace-nowrap shrink-0"
             aria-pressed={selectedCategory === cat}
           >
             {cat}
@@ -52,9 +52,9 @@ export default function CompetitionsPage() {
       </div>
 
       {/* Competition Cards Grid */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
         {filtered.map((comp) => (
-          <article key={comp.id} className="card p-6 flex flex-col justify-between">
+          <article key={comp.id} className="card p-5 sm:p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
                 <span

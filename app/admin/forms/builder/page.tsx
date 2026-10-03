@@ -85,13 +85,13 @@ export default function FormBuilderPage() {
 
   return (
     <>
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <Link href="/admin" className="text-xs font-semibold hover:underline" style={{ color: 'var(--ochre)' }}>
             ← Back to Secretariat Backoffice
           </Link>
-          <div className="flex items-center gap-3 mt-1">
-            <h1 className="disp text-3xl md:text-4xl font-bold">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1">
+            <h1 className="disp text-2xl sm:text-3xl md:text-4xl font-bold">
               Zero-Code Visual Form Builder
             </h1>
             <span
@@ -107,22 +107,22 @@ export default function FormBuilderPage() {
           </p>
         </div>
 
-        <div className="flex gap-2">
-          <button onClick={() => setShowJsonModal(true)} className="btn2 text-xs">
+        <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+          <button onClick={() => setShowJsonModal(true)} className="btn2 text-xs flex-1 sm:flex-initial justify-center py-2">
             Export JSON Schema
           </button>
-          <button onClick={handlePublishVersion} className="btn text-xs">
+          <button onClick={handlePublishVersion} className="btn text-xs flex-1 sm:flex-initial justify-center py-2">
             Publish v{schema.version + 1} Snapshot →
           </button>
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
         {/* Left Side: Field Palette & Canvas Editor */}
         <div className="space-y-6">
-          <div className="card p-5">
+          <div className="card p-4 sm:p-5">
             <h3 className="font-bold text-sm mb-3">Add Dynamic Field</h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {AVAILABLE_TYPES.map((type) => (
                 <button
                   key={type}
@@ -153,7 +153,7 @@ export default function FormBuilderPage() {
                   </button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label className="text-[11px] font-semibold block mb-0.5">Field Label</label>
                     <input
@@ -211,7 +211,7 @@ export default function FormBuilderPage() {
 
         {/* Right Side: Split-Screen Live Form Preview */}
         <div>
-          <div className="card p-6 md:p-8 sticky top-20 shadow-md">
+          <div className="card p-5 sm:p-6 md:p-8 lg:sticky lg:top-20 shadow-md">
             <div className="flex justify-between items-center pb-4 mb-5 border-b" style={{ borderColor: 'var(--line)' }}>
               <div>
                 <span className="disp text-xs uppercase font-bold tracking-widest" style={{ color: 'var(--ochre)' }}>
@@ -337,8 +337,8 @@ export default function FormBuilderPage() {
 
       {/* JSON Schema Exporter Modal */}
       {showJsonModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="card max-w-xl w-full p-6 relative shadow-2xl animate-in zoom-in-95 duration-150" style={{ background: 'var(--card)' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+          <div className="card max-w-xl w-full p-5 sm:p-6 relative shadow-2xl animate-in zoom-in-95 duration-150 max-h-[90vh] overflow-y-auto" style={{ background: 'var(--card)' }}>
             <button
               onClick={() => setShowJsonModal(false)}
               className="absolute top-4 right-4 text-sm font-bold text-gray-400"

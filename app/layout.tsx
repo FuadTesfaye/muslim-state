@@ -33,7 +33,7 @@ export default function RootLayout({
             <HashRouteHandler />
             <Header />
             <RoleBanner />
-            <main id="app" className="max-w-6xl mx-auto px-5 py-10 min-h-[70vh]">
+            <main id="app" className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 min-h-[70vh]">
               {children}
             </main>
             <Footer />

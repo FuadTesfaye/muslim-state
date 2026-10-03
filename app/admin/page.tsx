@@ -11,32 +11,32 @@ export default function AdminPage() {
 
   return (
     <>
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <span className="disp text-xs uppercase font-bold tracking-widest" style={{ color: 'var(--ochre)' }}>
             Supreme Secretariat General
           </span>
-          <h1 className="disp text-4xl md:text-5xl font-bold mt-1">
+          <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold mt-1">
             Central Secretariat Administration
           </h1>
-          <p className="mt-2 max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
             Governing summits, multi-day registration quotas, proctored examinations,
             100-point rubric adjudications, and immutable audit telemetry.
           </p>
         </div>
 
-        <div className="flex gap-2">
-          <Link href="/admin/grading" className="btn text-xs">
+        <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+          <Link href="/admin/grading" className="btn text-xs flex-1 sm:flex-initial justify-center py-2 sm:py-2.5">
             100-Pt Grading Portal →
           </Link>
-          <Link href="/admin/forms/builder" className="btn2 text-xs">
+          <Link href="/admin/forms/builder" className="btn2 text-xs flex-1 sm:flex-initial justify-center py-2 sm:py-2.5">
             Visual Form Builder →
           </Link>
         </div>
       </div>
 
       {/* Quick Navigation Cards */}
-      <div className="grid sm:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
         <Link href="/admin/grading" className="card p-5 block hover:shadow-md transition-shadow">
           <div className="flex justify-between items-center mb-2">
             <span className="text-xs uppercase font-bold tracking-wider" style={{ color: 'var(--ochre)' }}>
@@ -146,7 +146,7 @@ export default function AdminPage() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full min-w-[620px] text-left text-xs">
             <thead
               className="uppercase tracking-wider border-b font-mono"
               style={{ background: 'var(--soft)', borderColor: 'var(--line)', color: 'var(--mute)' }}

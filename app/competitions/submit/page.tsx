@@ -51,22 +51,22 @@ export default function SubmitCompetitionPage() {
 
   return (
     <>
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <Link href="/competitions" className="text-xs font-semibold hover:underline" style={{ color: 'var(--ochre)' }}>
           ← Back to Competitions
         </Link>
-        <h1 className="disp text-4xl md:text-5xl font-bold mt-2">
+        <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2">
           Manual Submission Portal
         </h1>
-        <p className="mt-2 max-w-2xl" style={{ color: 'var(--mute)' }}>
+        <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
           Upload high-fidelity acoustic Quran recitations or scholarly ethical treatises for
           official 100-point rubric adjudication by the Secretariat Judicial Council.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
         {/* Form Container */}
-        <form onSubmit={handleSubmit} className="md:col-span-2 card p-6 md:p-8 space-y-5">
+        <form onSubmit={handleSubmit} className="md:col-span-2 card p-5 sm:p-6 md:p-8 space-y-4 sm:space-y-5">
           <div>
             <label className="text-xs font-semibold block mb-1">Select Tournament</label>
             <select
@@ -139,7 +139,7 @@ export default function SubmitCompetitionPage() {
                   Acoustic Studio Waveform Preview
                 </label>
                 <div
-                  className="h-20 rounded-lg p-3 border flex items-end justify-between gap-1 overflow-hidden"
+                  className="h-20 rounded-lg p-2.5 sm:p-3 border flex items-end justify-between gap-0.5 sm:gap-1 overflow-hidden"
                   style={{ background: 'var(--card)', borderColor: 'var(--line)' }}
                 >
                   {[
@@ -148,7 +148,7 @@ export default function SubmitCompetitionPage() {
                   ].map((height, i) => (
                     <div
                       key={i}
-                      className="w-1.5 rounded-full transition-all duration-300"
+                      className="flex-1 min-w-[2px] max-w-[6px] rounded-full transition-all duration-300"
                       style={{
                         height: `${height}%`,
                         background: i % 2 === 0 ? 'var(--blue)' : 'var(--ochre)'

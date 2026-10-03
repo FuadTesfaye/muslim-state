@@ -25,20 +25,20 @@ export default function DashboardPage() {
 
   return (
     <>
-      <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+      <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h1 className="disp text-4xl md:text-5xl font-bold">{t('dashboard')}</h1>
-          <p className="mt-2 max-w-2xl" style={{ color: 'var(--mute)' }}>
+          <h1 className="disp text-3xl sm:text-4xl md:text-5xl font-bold">{t('dashboard')}</h1>
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm max-w-2xl" style={{ color: 'var(--mute)' }}>
             Your delegate cockpit for active event passes, proctored tournament standings,
             rubric evaluations, and parchment diplomas.
           </p>
         </div>
 
-        <div className="flex gap-2">
-          <Link href="/events" className="btn text-xs">
+        <div className="flex gap-2 w-full sm:w-auto">
+          <Link href="/events" className="btn text-xs flex-1 sm:flex-initial justify-center py-2 sm:py-2.5">
             + Register Pass
           </Link>
-          <Link href="/test" className="btn2 text-xs">
+          <Link href="/test" className="btn2 text-xs flex-1 sm:flex-initial justify-center py-2 sm:py-2.5">
             Take Exam
           </Link>
         </div>
@@ -254,18 +254,18 @@ export default function DashboardPage() {
 
       {/* Appeal Rebuttal Modal */}
       {appealSub && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="card max-w-lg w-full p-6 relative shadow-2xl animate-in zoom-in-95 duration-150" style={{ background: 'var(--card)' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+          <div className="card max-w-lg w-full p-5 sm:p-6 relative shadow-2xl animate-in zoom-in-95 duration-150 max-h-[90vh] overflow-y-auto" style={{ background: 'var(--card)' }}>
             <button
               onClick={() => setAppealSub(null)}
-              className="absolute top-4 right-4 text-sm font-bold text-gray-400"
+              className="absolute top-4 right-4 text-sm font-bold text-gray-400 hover:text-gray-600 dark:hover:text-white"
             >
               ✕
             </button>
             <span className="disp text-xs uppercase font-bold tracking-widest" style={{ color: 'var(--ochre)' }}>
               Contestant Appeal Council
             </span>
-            <h3 className="disp text-2xl font-bold mt-1">Lodge Official Rebuttal</h3>
+            <h3 className="disp text-xl sm:text-2xl font-bold mt-1">Lodge Official Rebuttal</h3>
             <p className="text-xs mt-1" style={{ color: 'var(--mute)' }}>
               Submission: {appealSub.competitionTitle} ({appealSub.id})
             </p>
@@ -281,15 +281,15 @@ export default function DashboardPage() {
                   value={rebuttalText}
                   onChange={(e) => setRebuttalText(e.target.value)}
                   placeholder="Detail the technical or theological basis for your appeal (e.g. mic recording delay, Riwayah difference, classical source citation)..."
-                  className="w-full px-3 py-2 text-xs rounded-lg border"
+                  className="w-full px-3 py-2 text-xs rounded-lg border font-serif"
                   style={{ background: 'var(--card)', borderColor: 'var(--line)', color: 'var(--ink)' }}
                 />
               </div>
-              <div className="flex gap-2">
-                <button type="button" onClick={() => setAppealSub(null)} className="btn2 flex-1 justify-center text-xs">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <button type="button" onClick={() => setAppealSub(null)} className="btn2 flex-1 justify-center text-xs py-2">
                   Cancel
                 </button>
-                <button type="submit" className="btn flex-1 justify-center text-xs">
+                <button type="submit" className="btn flex-1 justify-center text-xs py-2">
                   Lodge Official Appeal →
                 </button>
               </div>
